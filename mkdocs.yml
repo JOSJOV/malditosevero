@@ -22,31 +22,38 @@ theme:
    code: Roboto Mono
       
   features:
+   - navigation.top
    - navigation.instant
    - navigation.instant.prefetch
    - navigation.tracking
    - navigation.tabs
-
+   - content.code.copy
+   
+nav:
 nav:
   - Home: 'index.md'
+  - Vocabulario: 'vocabulario/index.md'  
+  - Novelas IT: 'novelas/index.md'
           
 markdown_extensions: 
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
-  - pymdownx.caret
   - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
   - pymdownx.details
   - pymdownx.emoji:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
   - pymdownx.inlinehilite
   - pymdownx.magiclink
-  - pymdownx.mark
   - pymdownx.smartsymbols
+  - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.tilde
   - pymdownx.highlight:
       anchor_linenums: true
   - fenced_code
