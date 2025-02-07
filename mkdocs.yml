@@ -9,8 +9,8 @@ repo_url: https://github.com/JOSJOV/malditosevero/
 theme:
   name: material
   language: es
-  favicon: img/favicon.png
-  logo: img/favicon.png
+  favicon: img/faviconporky.jpg
+  logo: img/faviconporky.jpg
 
   palette:
    scheme: default
