@@ -5,6 +5,9 @@ title: Novelas IT
 ---
 
 ---
+
+## **Mañana, mañana y mañana**
+
 <br>
 <div style="display: flex; align-items: flex-start;">
     <img src="img/manana.jpg" alt="Texto alternativo" style="margin-right: 40px; width: 220px;"/>
@@ -27,6 +30,8 @@ title: Novelas IT
 ---
 
 ---
+
+## **Valle inquietante**
 
 <br>
 <div style="display: flex; align-items: flex-start;">
@@ -51,6 +56,8 @@ title: Novelas IT
 ---
 
 ---
+
+## **El círculo**
 
 <br>
 <div style="display: flex; align-items: flex-start;">
@@ -77,11 +84,13 @@ Novela de suspense sobre la invasión de la privacidad en la era de las redes so
 
 ---
 
+## **Reamde o El mundo a velocidad de vídeojuego**
+
 <br>
 <div style="display: flex; align-items: flex-start;">
     <img src="img/readme.jpg" alt="Texto alternativo" style="margin-right: 40px; width: 220px;"/>
     <div>
-        <strong>Título:</strong> Reamde O el mundo a velocidad de vídeojuego<br>
+        <strong>Título:</strong> Reamde o El mundo a velocidad de vídeojuego<br>
         <strong>Autor:</strong> Neal Stephenson<br>
         <strong>Editorial:</strong> Ediciones B<br>
         <strong>Año edición española:</strong> 2012<br>
@@ -98,6 +107,8 @@ Una novela tecno-thriller que involucra a jóvenes emprendedores en el mundo de 
 ---
 
 ---
+
+## **JPod**
 
 <br>
 <div style="display: flex; align-items: flex-start;">
@@ -125,6 +136,8 @@ sacrifican sus vidas privadas por el trabajo.
 ---
 
 ---
+
+## **Microsiervos**
 
 <br>
 <div style="display: flex; align-items: flex-start;">

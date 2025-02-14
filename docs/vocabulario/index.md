@@ -1,8 +1,8 @@
-title: vocabulario Java con pronunciacion figurada
+title: Vocabulario Java con pronunciación figurada
 
 ---
 
-# vocabulario Java con pronunciación figurada
+# Vocabulario Java con pronunciación figurada
 
 ---
 
@@ -10,8 +10,8 @@ title: vocabulario Java con pronunciacion figurada
 
         
 
-**Java** / Fonetica IPA / *Pronunciación figurada* <br>
-. - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+**Java** / Fonética IPA / *Pronunciación figurada* <br>
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + 
 
 
 ### A
@@ -229,4 +229,4 @@ title: vocabulario Java con pronunciacion figurada
 
 ---
 
-
+---

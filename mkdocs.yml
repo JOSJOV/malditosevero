@@ -32,7 +32,7 @@ theme:
 nav:
 nav:
   - Home: 'index.md'
-  - Vocabulario: 'vocabulario/index.md'  
+  - Vocabulario Java: 'vocabulario/index.md'  
   - Novelas IT: 'novelas/index.md'
           
 markdown_extensions: 
