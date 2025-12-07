@@ -1,0 +1,74 @@
+site_name: Maldito Severo
+site_author: Maldito Severo
+site_description: Maldito Severo
+site_url: https://josjov.github.io/malditosevero/
+
+repo_name: malditosevero
+repo_url: https://github.com/JOSJOV/malditosevero/
+
+theme:
+  name: material
+  language: es
+  favicon: img/faviconporky.jpg
+  logo: img/faviconporky.jpg
+
+  palette:
+   scheme: default
+   primary: blue grey 
+   accent: deep orange 
+  
+  font:
+   text: Roboto
+   code: Roboto Mono
+      
+  features:
+   - navigation.top
+   - navigation.instant
+   - navigation.instant.prefetch
+   - navigation.tracking
+   - navigation.tabs
+   - content.code.copy
+   
+nav:
+nav:
+  - Home: 'index.md'
+  - Vocabulario Java: 'vocabulario/index.md'  
+  - Novelas IT: 'novelas/index.md'
+          
+markdown_extensions: 
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - fenced_code
+  - codehilite
+  - admonition
+  - toc:
+      title: Contenido
+      toc_depth: 4
+
+plugins:
+  - search
+
+copyright: Liborio loves ChataGPT
+extra:
+  generator: false
+ 
+extra_css:
+  - css/extra.css
