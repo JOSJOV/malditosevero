@@ -70,10 +70,9 @@ title: Novelas IT
 		<strong>Reseña:</strong>
 		<a href="https://blogs.uoc.edu/informatica/es/las-aventuras-de-jim-barton/">UOC</a><br><br>
 
-Jim Barton, nuevo CIO de la información y TIC, le previene su antecesor «Aquí no durarás un año».
+A Jim Barton, nuevo CIO de la información y TIC, le previene su antecesor «Aquí no durarás un año».
 Vive una crisis con caída de todos los sistemas, mentiras de los proyectos fallidos, 
-trato con clientes internos y partners, preguntas metafísicas del coste de la informática, 
-cómo manejar a los raros ingenieros TIC.
+trato con clientes internos y partners, preguntas metafísicas, o cómo manejar a los raros ingenieros TIC.
     </div>
 </div>
 <br>
