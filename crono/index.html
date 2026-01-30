@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title id="pageTitle">00:00</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #000000;
+            font-family: Consolas, Monaco, 'Lucida Console', monospace;
+            overflow: hidden;
+            font-weight: 400;
+        }
+        
+        #tiempo {
+            font-size: 28vw;
+            font-weight: 400 !important;
+            color: #ffffff;
+            margin-bottom: 2vh;
+            min-height: 28vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-variation-settings: 'wght' 100;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            
+        }
+        
+        .input-section {
+            display: flex;
+            gap: 0px;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            align-items: center;
+            font-weight: 200;
+        }
+        
+        .input-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        input {
+            font-size: 2.5vw;
+            width: 12vw;
+            height: 5vw;
+            padding: 2px;
+            border: none;
+            background: transparent;
+            color: #ffffff;
+            font-weight: 200;
+            text-align: center;
+            font-family: inherit;
+            -moz-appearance: textfield;
+            outline: none;
+            
+        }
+        
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        input::placeholder {
+            color: #666666;
+            opacity: 0.6;
+        }
+        
+        button {
+            font-size: 2vw;
+            padding: 4px 12px;
+            border: none;
+            background: transparent;
+            color: #ffffff;
+            font-weight: 200;
+            cursor: pointer;
+            font-family: inherit;
+            transition: color 0.3s;
+            outline: none;
+            margin-left: 8px;
+            
+        }
+        
+        button:hover {
+            color: #cccccc;
+        }
+        
+        @media (max-width: 480px) {
+            #tiempo { font-size: 26vw; }
+            input { font-size: 3.5vw; width: 15vw; height: 7vw; }
+            button { font-size: 2.5vw; }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="tiempo">00:00</h1>
+    
+    <div class="input-section" id="inputSection">
+        <input type="number" id="minutos" placeholder="00" value="10">
+        <span style="color: #ffffff; font-size: 2.5vw; font-weight: 400;">:</span>
+        <input type="number" id="segundos" placeholder="00" value="00">
+        <button onclick="iniciar()">start</button>
+    </div>
+    
+    <script>
+        let tiempoRestante = 0;
+        let intervalo;
+        let audioContext;
+        
+        const tiempoDisplay = document.getElementById('tiempo');
+        const pageTitle = document.getElementById('pageTitle');
+        const inputSection = document.getElementById('inputSection');
+        const minInput = document.getElementById('minutos');
+        const segInput = document.getElementById('segundos');
+        
+        inputSection.classList.add('active');
+        
+        function initAudioContext() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+        
+        function playBeep() {
+            initAudioContext();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = 800;
+            oscillator.type = 'square';
+            
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.5);
+        }
+        
+        minInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') iniciar();
+        });
+        segInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') iniciar();
+        });
+        
+        function actualizarTiempo() {
+            let minutos = Math.floor(tiempoRestante / 60);
+            let segundos = tiempoRestante % 60;
+            const tiempoFormateado = `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+            
+            tiempoDisplay.textContent = tiempoFormateado;
+            pageTitle.textContent = `${tiempoFormateado}`;
+            
+            if (tiempoRestante <= 0) {
+                clearInterval(intervalo);
+                tiempoDisplay.textContent = '00:00';
+                pageTitle.textContent = '00:00';
+                inputSection.classList.add('active');
+                
+                // sonido vibración, mensaje
+                playBeep();
+				//alert('¡Tiempo terminado!');
+                if (navigator.vibrate) {
+                    navigator.vibrate(200);
+                }
+            }
+            tiempoRestante--;
+        }
+        
+        function iniciar() {
+            const minutos = parseInt(minInput.value) || 0;
+            const segundos = parseInt(segInput.value) || 0;
+            tiempoRestante = (minutos * 60) + segundos;
+            
+            if (tiempoRestante <= 0) {
+                alert('Introduce un tiempo válido');
+                return;
+            }
+            
+            inputSection.classList.remove('active');
+            clearInterval(intervalo);
+            intervalo = setInterval(actualizarTiempo, 1000);
+            actualizarTiempo();
+        }
+        
+        document.addEventListener('touchstart', function() {
+            if (document.fullscreenElement === null) {
+                document.documentElement.requestFullscreen().catch(() => {});
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>
