@@ -32,6 +32,7 @@ theme:
 nav:
 nav:
   - Home: 'index.md'
+  - Cuenta atrás: 'crono/index.html'
   - Vocabulario Java: 'vocabulario/index.md'  
   - Novelas IT: 'novelas/index.md'
           
